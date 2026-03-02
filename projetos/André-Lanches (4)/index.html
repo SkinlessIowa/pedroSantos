@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Lanches - Os melhores lanches da cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="img/Frame 1(1).png" alt="Logo André Lanches" class="logo">
+                <h1>André Lanches</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#promocoes">Promoções</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="img/5081458-hd_1920_1080_24fps.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+        <div class="hero-content">
+            <h1>Bem-vindo ao André Lanches</h1><hr>
+            <h2>Os melhores lanches da região!</h2>
+        </div>
+    </div>
+
+    <section id="sobre" class="sobre">
+        <div class="sobre-content">
+            <h2 class="section-title">Sobre o André Lanches</h2>
+            <p>O André Lanches é uma tradição na cidade, servindo os melhores lanches desde 1995. Nossa missão é proporcionar momentos de prazer gastronômico com ingredientes frescos e receitas especiais.</p>
+            <p>Nossos lanches são preparados com pão fresquinho, carnes selecionadas e ingredientes de primeira qualidade. Tudo isso em um ambiente acolhedor e familiar.</p>
+        </div>
+    </section>
+
+    <section id="horarios" class="horarios">
+        <div class="container">
+            <h2 class="section-title">Horários de Funcionamento</h2>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                    </tr>
+                    <tr>
+                        <td>Segunda</td>
+                        <td>18h - 23h</td>
+                    </tr>
+                    <tr>
+                        <td>Terça a Quinta</td>
+                        <td>11h - 23h</td>
+                    </tr>
+                    <tr>
+                        <td>Sexta e Sábado</td>
+                        <td>11h - 00h</td>
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td>11h - 22h</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="promocoes" class="promocoes">
+        <div class="container">
+            <div class="promocoes-header">
+                <h2 class="section-title">Promoções Imperdíveis</h2>
+                <div class="promo-badge">LIMITADO</div>
+            </div>
+            <div class="itens-promocao">
+                <div class="promo-item promo-destaque">
+                    <div class="promo-tag">MAIS PEDIDO</div>
+                    <img src="img/xsalada-combo.jpeg" alt="Combo X-Salada + Batata">
+                    <div class="promo-info">
+                        <h3>Combo X-Salada + Batata</h3>
+                        <p>X-Salada artesanal com batata frita crocante e molho especial.</p>
+                        <div class="preco-container">
+                            <span class="preco-antigo">R$ 24,90</span>
+                            <span class="preco">R$ 19,90</span>
+                        </div>
+                        <button class="btn-promo">Peça Agora</button>
+                    </div>
+                </div>
+                
+                <div class="promo-item">
+                    <img src="img/xbacon-combo.webp" alt="Combo X-Bacon + Refri">
+                    <div class="promo-info">
+                        <h3>Combo X-Bacon + Refri</h3>
+                        <p>X-Bacon suculento acompanhado de refrigerante gelado.</p>
+                        <div class="preco-container">
+                            <span class="preco-antigo">R$ 29,90</span>
+                            <span class="preco">R$ 24,90</span>
+                        </div>
+                        <button class="btn-promo">Peça Agora</button>
+                    </div>
+                </div>
+                
+                <div class="promo-item">
+                    <img src="img/combo-familia.jpg" alt="Combo Familía">
+                    <div class="promo-info">
+                        <h3>Combo Família</h3>
+                        <p>2 X-Tudo, 2 X-Frango, porção de batata e 2 refrigerantes.</p>
+                        <div class="preco-container">
+                            <span class="preco-antigo">R$ 69,90</span>
+                            <span class="preco">R$ 59,90</span>
+                        </div>
+                        <button class="btn-promo">Peça Agora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio" class="cardapio">
+        <div class="container">
+            <h2 class="section-title">Nosso Cardápio</h2>
+    
+            <h3 class="categoria">Lanches 🍔</h3>
+            <div class="itens-cardapio">
+                <div class="item">
+                    <img src="img/xsalada.jpeg" alt="X-Salada">
+                    <h3>X-Salada</h3>
+                    <p>Pão, hambúrguer, queijo, alface, tomate e maionese.</p>
+                    <span class="preco">R$ 18,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/xbacon.jpeg" alt="X-Bacon">
+                    <h3>X-Bacon</h3>
+                    <p>Pão, hambúrguer, queijo, bacon crocante e maionese.</p>
+                    <span class="preco">R$ 22,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/xtudo.jpeg" alt="X-Tudo">
+                    <h3>X-Tudo</h3>
+                    <p>Pão, 2 hambúrgueres, queijo, presunto, bacon, ovo, alface, tomate e maionese.</p>
+                    <span class="preco">R$ 28,00</span>
+                </div>
+            </div>
+    
+            <h3 class="categoria">Acompanhamentos 🍟</h3>
+            <div class="itens-cardapio">
+                <div class="item">
+                    <img src="img/fry.jpeg" alt="Batata Frita">
+                    <h3>Batata Frita</h3>
+                    <p>Porção de batata frita crocante com molho especial.</p>
+                    <span class="preco">R$ 12,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/onion.jpeg" alt="Onion Rings">
+                    <h3>Onion Rings</h3>
+                    <p>Anéis de cebola empanados e crocantes.</p>
+                    <span class="preco">R$ 15,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/nuggets.jpeg" alt="Nuggets">
+                    <h3>Nuggets</h3>
+                    <p>8 unidades de nuggets de frango crocantes.</p>
+                    <span class="preco">R$ 16,00</span>
+                </div>
+            </div>
+    
+            <h3 class="categoria">Bebidas 🥤</h3>
+            <div class="itens-cardapio">
+                <div class="item">
+                    <img src="img/soda.jpeg" alt="Refrigerante">
+                    <h3>Refrigerante</h3>
+                    <p>Lata 350ml - Coca-Cola, Guaraná, Fanta ou Sprite.</p>
+                    <span class="preco">R$ 6,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/juice.webp" alt="Suco Natural">
+                    <h3>Suco Natural</h3>
+                    <p>500ml - Laranja, Abacaxi, Maracujá ou Limão.</p>
+                    <span class="preco">R$ 10,00</span>
+                </div>
+                <div class="item">
+                    <img src="img/milkshake.jpeg" alt="Milkshake">
+                    <h3>Milkshake</h3>
+                    <p>400ml - Chocolate, Morango, Ovomaltine ou Doce de Leite.</p>
+                    <span class="preco">R$ 14,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="localizacao">
+        <div class="container">
+            <h2 class="section-title">Localização</h2>
+            <p class="section-description">Estamos esperando por você! Confira onde nos encontrar:</p>
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-46.12345678901234!3d-23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzI0LjQiUyA0NsKwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="info-local">
+                <p><strong>Endereço:</strong> Rua dos Lanches, 123 - Centro</p>
+                <p><strong>Telefone:</strong> (11) 1234-5678</p>
+                <p><strong>Delivery:</strong> Consulte nossa área de entrega</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <form id="form-contato" action="#" method="post">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="assunto">Assunto</label>
+                <select id="assunto" name="assunto" required>
+                  <option value="" disabled selected>Selecione um assunto</option>
+                  <option value="reserva">Reserva</option>
+                  <option value="delivery">Delivery</option>
+                  <option value="duvida">Dúvida</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." required></textarea>
+              </div>
+          
+              <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+          </div>          
+      </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 André Lanches - Todos os direitos reservados</p>
+            <div class="social">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+            </div>
+            <div class="entrega">
+                <h4>Delivery: (11) 1234-5678</h4>
+                <p>Entregamos na sua casa!</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

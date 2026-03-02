@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetCare - Clínica Veterinária Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <img src="ibagens/Frame 1.png" alt="VetCare Logo" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Vet<span>Care</span></h1>
+                        <p>Excelência Veterinária</p>
+                    </div>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                        <li><a href="#services" class="nav-link"><i class="fas fa-stethoscope"></i> Serviços</a></li>
+                        <li><a href="#team" class="nav-link"><i class="fas fa-users"></i> Equipe</a></li>
+                        <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Galeria</a></li>
+                        <li><a href="#contact" class="nav-link"><i class="fas fa-phone-alt"></i> Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="btn btn-outline" id="emergencyBtn">
+                        <i class="fas fa-ambulance"></i> Emergência
+                    </button>
+                    <button class="btn btn-primary" id="appointmentBtn">
+                        <i class="fas fa-calendar-check"></i> Agendar
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section com VÍDEOS -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide active">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="ibagens/video gatinho.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Cuidado Veterinário <span>Premium</span></h1>
+                    <p>Tecnologia avançada e atendimento humanizado para seu pet</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="scheduleHeroBtn">
+                            <i class="fas fa-calendar-alt"></i> Agendar Consulta
+                        </button>
+                        <button class="btn btn-outline" id="servicesHeroBtn">
+                            <i class="fas fa-clipboard-list"></i> Nossos Serviços
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="ibagens/video gatinho branco.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Centro Cirúrgico <span>Avançado</span></h1>
+                    <p>Equipamentos de última geração para procedimentos seguros</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="contactHeroBtn">
+                            <i class="fas fa-phone-alt"></i> Fale Conosco
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="ibagens/855402-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Especialistas <span>Qualificados</span></h1>
+                    <p>Equipe multidisciplinar com anos de experiência</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="teamHeroBtn">
+                            <i class="fas fa-user-md"></i> Conheça a Equipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="5000">0</h3>
+                        <p>Pets Atendidos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="15">0</h3>
+                        <p>Especialistas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="12">0</h3>
+                        <p>Anos de Experiência</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="24">0</h3>
+                        <p>Horas Disponível</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre a <span>VetCare</span></h2>
+                <p class="section-subtitle">Excelência em medicina veterinária desde 2010</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="ibagens/clínica 4.jpg" alt="Nossa Clínica">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Compromisso com a Saúde Animal</h3>
+                    <p>Na VetCare, combinamos tecnologia de ponta com atendimento humanizado para oferecer o melhor cuidado para seu pet. Nossa missão é proporcionar tratamentos eficazes com carinho e profissionalismo.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Certificação de Qualidade</h4>
+                                <p>Clínica certificada com os mais altos padrões veterinários</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Segurança Garantida</h4>
+                                <p>Protocolos rigorosos de segurança e esterilização</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Atendimento Humanizado</h4>
+                                <p>Cada pet recebe atenção individualizada e carinho</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Tecnologia Avançada</h4>
+                                <p>Equipamentos modernos para diagnósticos precisos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="learnMoreBtn">
+                        <i class="fas fa-book-open"></i> Saiba Mais
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos <span>Serviços</span></h2>
+                <p class="section-subtitle">Cuidados completos para todas as fases da vida do seu pet</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="consultas">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Consultas</h3>
+                    <p>Exames clínicos e acompanhamento veterinário</p>
+                    <button class="service-link" data-service="consultas">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-service="vacinação">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Vacinação</h3>
+                    <p>Programa completo de imunização</p>
+                    <button class="service-link" data-service="vacinação">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-service="cirurgias">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Cirurgias</h3>
+                    <p>Procedimentos cirúrgicos especializados</p>
+                    <button class="service-link" data-service="cirurgias">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-service="exames">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Exames</h3>
+                    <p>Diagnóstico laboratorial e de imagem</p>
+                    <button class="service-link" data-service="exames">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-service="banho-tosa">
+                    <div class="service-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3>Banho & Tosa</h3>
+                    <p>Higiene e cuidados estéticos</p>
+                    <button class="service-link" data-service="banho-tosa">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="service-card" data-service="internação">
+                    <div class="service-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Internação</h3>
+                    <p>Cuidados 24h com monitoramento</p>
+                    <button class="service-link" data-service="internação">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team section-padding" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossa <span>Equipe</span></h2>
+                <p class="section-subtitle">Profissionais especializados e apaixonados por animais</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ibagens/dr. joão silva.webp" alt="Dr. João Silva">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. João Silva</h3>
+                        <p class="team-specialty">Clínico Geral</p>
+                        <p class="team-bio">15 anos de experiência em medicina veterinária</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">Clínica Geral</span>
+                            <span class="skill-tag">Preventiva</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ibagens/dra. maria souza.webp" alt="Dra. Maria Souza">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. Maria Souza</h3>
+                        <p class="team-specialty">Cirurgiã</p>
+                        <p class="team-bio">Especialista em cirurgias de pequenos animais</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">Cirurgia</span>
+                            <span class="skill-tag">Trauma</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ibagens/dr. carlos mendes.webp" alt="Dr. Carlos Mendes">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Carlos Mendes</h3>
+                        <p class="team-specialty">Dermatologista</p>
+                        <p class="team-bio">Especializado em doenças de pele</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">Dermatologia</span>
+                            <span class="skill-tag">Alergias</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ibagens/dra. ana lúcia.webp" alt="Dra. Ana Lúcia">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. Ana Lúcia</h3>
+                        <p class="team-specialty">Ortopedista</p>
+                        <p class="team-bio">Especialista em problemas articulares</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">Ortopedia</span>
+                            <span class="skill-tag">Fisioterapia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section-padding" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossa <span>Estrutura</span></h2>
+                <p class="section-subtitle">Conheça nossas instalações modernas e acolhedoras</p>
+            </div>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="consultorios">Consultórios</button>
+                <button class="filter-btn" data-filter="cirurgia">Centro Cirúrgico</button>
+                <button class="filter-btn" data-filter="internacao">Internação</button>
+                <button class="filter-btn" data-filter="estetica">Estética</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="consultorios">
+                    <img src="ibagens/clínica 1.jpg" alt="Recepção">
+                    <div class="gallery-overlay">
+                        <h4>Recepção</h4>
+                        <p>Ambiente acolhedor para você e seu pet</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="cirurgia">
+                    <img src="ibagens/clínica 2.jpg" alt="Centro Cirúrgico">
+                    <div class="gallery-overlay">
+                        <h4>Centro Cirúrgico</h4>
+                        <p>Tecnologia de ponta para cirurgias</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="consultorios">
+                    <img src="ibagens/clínica 3.jpg" alt="Sala de Exames">
+                    <div class="gallery-overlay">
+                        <h4>Sala de Exames</h4>
+                        <p>Equipamentos modernos para diagnósticos</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="internacao">
+                    <img src="ibagens/clínica 4.jpg" alt="Área de Internação">
+                    <div class="gallery-overlay">
+                        <h4>Internação</h4>
+                        <p>Conforto e monitoramento 24h</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="estetica">
+                    <img src="ibagens/tosa-veterinaria.webp" alt="Banho e Tosa">
+                    <div class="gallery-overlay">
+                        <h4>Banho e Tosa</h4>
+                        <p>Cuidados estéticos especializados</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="cirurgia">
+                    <img src="ibagens/cirurgia-veterinaria.jpg" alt="Sala de Recuperação">
+                    <div class="gallery-overlay">
+                        <h4>Recuperação</h4>
+                        <p>Ambiente pós-operatório seguro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Entre em <span>Contato</span></h2>
+                <p class="section-subtitle">Estamos aqui para ajudar seu pet</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Endereço</h4>
+                            <p>Rua dos Animais, 123 - Centro</p>
+                            <p>Cidade/UF - CEP: 00000-000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Telefone</h4>
+                            <p>(00) 1234-5678</p>
+                            <p>(00) 98765-4321 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>contato@vetcare.com.br</p>
+                            <p>emergencia@vetcare.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Horário</h4>
+                            <p>Seg-Sex: 8h às 20h</p>
+                            <p>Sábado: 9h às 14h</p>
+                            <p>Plantão 24h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Siga-nos</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Nome Completo *</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Mensagem *</label>
+                            <textarea id="contactMessage" class="form-control" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon-footer">
+                            <img src="ibagens/Frame 2.png" alt="VetCare Logo" class="logo-img-footer">
+                        </div>
+                        <div class="logo-text">
+                            <h3>Vet<span>Care</span></h3>
+                            <p>Excelência Veterinária</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Cuidando com amor e profissionalismo desde 2013. 
+                        Seu pet em boas mãos.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#team">Nossa Equipe</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Serviços</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Consultas</a></li>
+                        <li><a href="#services">Vacinação</a></li>
+                        <li><a href="#services">Cirurgias</a></li>
+                        <li><a href="#services">Exames</a></li>
+                        <li><a href="#services">Banho e Tosa</a></li>
+                        <li><a href="#services">Emergências</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Receba dicas e novidades sobre cuidados com seu pet</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Seu email" class="newsletter-input">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="payment-methods">
+                        <h5>Formas de Pagamento</h5>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fas fa-money-bill-wave"></i>
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 VetCare - Todos os direitos reservados</p>
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Serviço -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3 id="serviceModalTitle">Detalhes do Serviço</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="serviceModalBody">
+                <!-- Conteúdo será carregado via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Agendamento -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="appointmentModalTitle">Agendar Consulta</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentFormModal">
+                    <div class="form-group">
+                        <label for="appointmentName">Nome Completo *</label>
+                        <input type="text" id="appointmentName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appointmentEmail">Email *</label>
+                            <input type="email" id="appointmentEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentPhone">Telefone *</label>
+                            <input type="tel" id="appointmentPhone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="petName">Nome do Pet *</label>
+                            <input type="text" id="petName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="petType">Espécie *</label>
+                            <select id="petType" class="form-control" required>
+                                <option value="">Selecione</option>
+                                <option value="dog">Cão</option>
+                                <option value="cat">Gato</option>
+                                <option value="bird">Ave</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="petBreed">Raça</label>
+                            <input type="text" id="petBreed" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="petAge">Idade</label>
+                            <input type="text" id="petAge" class="form-control" placeholder="Ex: 2 anos">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceType">Serviço Desejado *</label>
+                            <select id="serviceType" class="form-control" required>
+                                <option value="">Selecione</option>
+                                <option value="consultation">Consulta Geral</option>
+                                <option value="vaccine">Vacinação</option>
+                                <option value="surgery">Cirurgia</option>
+                                <option value="exam">Exames</option>
+                                <option value="grooming">Banho/Tosa</option>
+                                <option value="emergency">Emergência</option>
+                                <option value="followup">Retorno/Acompanhamento</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredDate">Data Preferencial *</label>
+                            <input type="date" id="preferredDate" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferredTime">Horário Preferencial *</label>
+                            <select id="preferredTime" class="form-control" required>
+                                <option value="">Selecione</option>
+                                <option value="morning">Manhã (8h-12h)</option>
+                                <option value="afternoon">Tarde (13h-18h)</option>
+                                <option value="evening">Noite (após 18h)</option>
+                                <option value="flexible">Flexível</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgência</label>
+                            <select id="urgency" class="form-control">
+                                <option value="normal">Normal</option>
+                                <option value="urgent">Urgente</option>
+                                <option value="emergency">Emergência</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointmentReason">Motivo da Consulta *</label>
+                        <textarea id="appointmentReason" class="form-control" rows="3" required placeholder="Descreva o motivo da consulta, sintomas, histórico..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="termsAgreement" required>
+                            Aceito os termos de serviço e política de privacidade *
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="submitAppointment">
+                        <i class="fas fa-calendar-check"></i> Confirmar Agendamento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>Agendamento Confirmado!</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 id="confirmationMessage">Seu agendamento foi realizado com sucesso!</h4>
+                <p id="confirmationDetails"></p>
+                <p class="confirmation-note">
+                    <small>
+                        <i class="fas fa-info-circle"></i> 
+                        Entraremos em contato em até 24 horas para confirmar os detalhes.
+                    </small>
+                </p>
+                <button class="btn btn-primary" id="closeConfirmation">
+                    <i class="fas fa-home"></i> Voltar ao Início
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5500123456789" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

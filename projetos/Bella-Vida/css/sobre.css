@@ -1,0 +1,336 @@
+@import url('./style.css');
+
+/* sobre.css - Estilos específicos para a página Sobre Nós */
+
+.page-header {
+    height: 50vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/entrada.jpg') center/cover;
+    opacity: 0.1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: bolder;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Seção História - Layout Alternativo */
+.history-section {
+    padding: 80px 0;
+    background-color: white;
+    position: relative;
+}
+
+.history-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('../imagens/wave-divider.svg') center/cover no-repeat;
+    z-index: 1;
+}
+
+.history-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.history-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--light-color);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.history-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.history-text {
+    text-align: center;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Seção Missão, Visão e Valores - Layout em Timeline */
+.mission-section {
+    padding: 100px 0 80px;
+    background-color: var(--light-color);
+    position: relative;
+    z-index: 2;
+}
+
+.mission-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+
+.mission-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.mission-card {
+    position: relative;
+    margin-bottom: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.mission-card::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 5px solid var(--light-color);
+}
+
+.mission-icon {
+    position: absolute;
+    top: 25px;
+    left: -95px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Seção Equipe - Layout em Colunas */
+.team-section {
+    padding: 80px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    height: 250px;
+    position: relative;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.member-info p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Seção Clínica - Galeria Moderna */
+.clinic-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+/* Seção Clínica - Galeria Moderna */
+.clinic-gallery {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Coluna menor para imagens à esquerda e maior para a imagem principal */
+    gap: 20px;
+    align-items: center;
+}
+
+.clinic-gallery .side-gallery {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); /* Organiza as imagens menores em uma coluna */
+    gap: 15px;
+}
+
+.clinic-gallery .side-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.clinic-gallery .side-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.clinic-gallery .main-image {
+    position: relative;
+}
+
+.clinic-gallery .main-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.clinic-gallery .main-image img:hover {
+    transform: scale(1.05);
+}
+
+.clinic-gallery .main-image .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.cta-section .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header {
+        height: 40vh;
+    }
+    
+    .mission-timeline {
+        padding-left: 70px;
+    }
+    
+    .mission-card::before {
+        left: -30px;
+    }
+    
+    .mission-icon {
+        left: -75px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .clinic-gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .side-gallery {
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+}

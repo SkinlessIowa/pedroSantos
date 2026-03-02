@@ -1,0 +1,115 @@
+/* ================================================
+   1. IMPORTAÇÃO DE FONTES E CORES
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --cor-gabinete: #2c2c2c; /* Cor do gabinete do fliperama */
+    --cor-borda-gabinete: #1a1a1a;
+    --cor-painel-controlo: #3a3a3a;
+    --cor-neon-vermelho: #ff1b1b;
+    --sombra-neon-vermelho: 0 0 8px #ff1b1b, 0 0 15px #ff1b1b;
+    --fonte-pixel: 'Press Start 2P', cursive;
+}
+
+
+/* ================================================
+   2. ESTILOS GERAIS E FUNDO
+   ================================================ */
+
+body {
+    background-color: #111;
+    background-image: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url('img/KOF-2002-UM.webp');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: var(--fonte-pixel);
+}
+
+.marquee {
+    color: var(--cor-neon-vermelho);
+    text-shadow: var(--sombra-neon-vermelho);
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+/* ================================================
+   3. O GABINETE DO FLIPERAMA
+   ================================================ */
+
+.arcade-machine {
+    width: 800px;
+    background-color: var(--cor-gabinete);
+    border: 10px solid var(--cor-borda-gabinete);
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px #000, 0 0 30px #000;
+    padding: 25px;
+    padding-top: 80px; /* Espaço para o "letreiro" */
+    position: relative;
+    margin-left: -440px;
+}
+
+/* Letreiro luminoso no topo */
+.marquee {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cor-neon-vermelho);
+    text-shadow: var(--sombra-neon-vermelho);
+    font-size: 1.8em;
+    letter-spacing: 4px;
+}
+
+/* O ecrã do jogo */
+.screen {
+    background: #000;
+    border: 15px solid #111;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px #000;
+    position: relative;
+}
+
+#game-container {
+    width: 100%;
+    /* Mantém a proporção 4:3 de um ecrã antigo */
+    aspect-ratio: 4 / 3; 
+    position: relative;
+}
+
+/* Efeito de Scanlines (linhas de TV antiga) sobre o jogo */
+#game-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2) 50%, transparent 50%);
+    background-size: 100% 4px;
+    opacity: 0.3;
+    pointer-events: none; /* Permite clicar através do efeito */
+    z-index: 10;
+}
+
+/* Painel de controlos decorativo */
+.controls-panel {
+    background-color: var(--cor-painel-controlo);
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #888;
+    font-size: 0.8em;
+}

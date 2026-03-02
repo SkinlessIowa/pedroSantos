@@ -1,0 +1,484 @@
+/* ========== LOGOFÓLIO ========== */
+.logofolio-section {
+    background: #f8f9fa !important;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 !important;
+    min-height: 100vh;
+}
+
+/* Efeito de grade sutil */
+.logofolio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(124, 58, 237, 0.459) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.459) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+    background-attachment: fixed;
+}
+
+/* Header do Logofólio */
+.logofolio-header {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 4rem !important;
+    text-align: center;
+}
+
+.logofolio-title {
+    font-family: 'Caveat', cursive !important;
+    font-size: 7rem !important;
+    font-weight: 700;
+    color: #1a1a1a !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+/* Linha decorativa simples */
+.logofolio-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #7c3aed, 
+        #ec4899,
+        transparent);
+    border-radius: 2px;
+}
+
+/* Subtítulo */
+.logofolio-subtitle {
+    color: #666 !important;
+    font-size: 1.4rem !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    max-width: 600px !important;
+    margin: 2rem auto 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+/* Container do grid - SIMPLES */
+.logofolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 3rem;
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Cada item de logo */
+.logofolio-img {
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Posição inicial: ligeiramente na diagonal */
+    transform: 
+        rotate(-5deg)
+        scale(0.95);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animação de entrada suave */
+.logofolio-item {
+    animation: logoEntrance 0.8s ease-out forwards;
+    animation-delay: calc(var(--item-index) * 0.1s);
+}
+
+@keyframes logoEntrance {
+    from {
+        opacity: 0;
+        transform: 
+            rotate(-15deg)
+            scale(0.8);
+    }
+    to {
+        opacity: 0.9;
+        transform: 
+            rotate(-5deg)
+            scale(0.95);
+    }
+}
+
+/* ========== EFEITO HOVER SIMPLES E ELEGANTE ========== */
+
+.logofolio-item:hover .logofolio-img {
+        transform: 
+        rotate(2deg);
+    z-index: 10;
+    transform: scale(1.15);
+    filter: 
+        drop-shadow(0 20px 40px rgb(124, 58, 237)) brightness(1.05);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .logofolio-section {
+        padding: 80px 0 !important;
+        min-height: auto;
+    }
+
+    .logofolio-header {
+        margin-bottom: 3rem !important;
+    }
+
+    .logofolio-title {
+        font-size: 5.5rem !important;
+    }
+
+    .logofolio-title::after {
+        width: 120px;
+        height: 3px;
+        bottom: -8px;
+    }
+
+    .logofolio-subtitle {
+        font-size: 1.3rem !important;
+        margin: 1.5rem auto 0 !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 1.5rem;
+        max-width: 900px;
+    }
+
+    .logofolio-img {
+        max-height: 180px;
+        transform: rotate(-3deg) scale(0.95);
+    }
+
+    .logofolio-item:hover .logofolio-img {
+        transform: rotate(1deg) scale(1.1);
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .logofolio-section {
+        padding: 70px 0 !important;
+        min-height: auto;
+    }
+
+    .logofolio-section::before {
+        background-size: 30px 30px;
+        opacity: 0.3;
+    }
+
+    .logofolio-header {
+        margin-bottom: 2.5rem !important;
+        padding: 0 1rem;
+    }
+
+    .logofolio-title {
+        font-size: 4.5rem !important;
+        letter-spacing: 1px;
+    }
+
+    .logofolio-title::after {
+        width: 100px;
+        height: 2px;
+        bottom: -5px;
+    }
+
+    .logofolio-subtitle {
+        font-size: 1.2rem !important;
+        letter-spacing: 1.5px;
+        margin: 1.2rem auto 0 !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .logofolio-img {
+        max-height: 140px;
+        transform: rotate(-4deg) scale(0.94);
+        filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+    }
+
+    .logofolio-item {
+        animation: logoEntranceTablet 0.7s ease-out forwards;
+    }
+
+    @keyframes logoEntranceTablet {
+        from {
+            opacity: 0;
+            transform: rotate(-10deg) scale(0.85);
+        }
+        to {
+            opacity: 0.95;
+            transform: rotate(-4deg) scale(0.94);
+        }
+    }
+
+    .logofolio-item:hover .logofolio-img {
+        transform: rotate(1deg) scale(1.12);
+        filter: drop-shadow(0 15px 30px rgba(124, 58, 237, 0.4)) brightness(1.05);
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+    .logofolio-section {
+        padding: 60px 0 !important;
+    }
+
+    .logofolio-section::before {
+        background-size: 25px 25px;
+        opacity: 0.25;
+    }
+
+    .logofolio-header {
+        margin-bottom: 2rem !important;
+    }
+
+    .logofolio-title {
+        font-size: 3.8rem !important;
+    }
+
+    .logofolio-title::after {
+        width: 80px;
+        height: 2px;
+        bottom: -5px;
+    }
+
+    .logofolio-subtitle {
+        font-size: 1.1rem !important;
+        letter-spacing: 1px;
+        margin: 1rem auto 0 !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+        padding: 1rem;
+        max-width: 500px;
+    }
+
+    .logofolio-img {
+        max-height: 130px;
+        padding: 8px;
+        transform: rotate(-3deg) scale(0.95);
+    }
+
+    .logofolio-item {
+        animation: logoEntranceMobile 0.6s ease-out forwards;
+        animation-delay: calc(var(--item-index) * 0.08s);
+    }
+
+    @keyframes logoEntranceMobile {
+        from {
+            opacity: 0;
+            transform: rotate(-8deg) scale(0.9);
+        }
+        to {
+            opacity: 0.95;
+            transform: rotate(-3deg) scale(0.95);
+        }
+    }
+
+    .logofolio-item:hover .logofolio-img {
+        transform: rotate(0deg) scale(1.08);
+        filter: drop-shadow(0 12px 25px rgba(124, 58, 237, 0.4));
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    .logofolio-section {
+        padding: 50px 0 !important;
+    }
+
+    .logofolio-section::before {
+        background-size: 20px 20px;
+        opacity: 0.2;
+    }
+
+    .logofolio-header {
+        margin-bottom: 1.8rem !important;
+        padding: 0 0.5rem;
+    }
+
+    .logofolio-title {
+        font-size: 3.2rem !important;
+    }
+
+    .logofolio-title::after {
+        width: 70px;
+        height: 2px;
+        bottom: -4px;
+        background: linear-gradient(90deg, transparent, #7c3aed, #ec4899, transparent);
+    }
+
+    .logofolio-subtitle {
+        font-size: 1rem !important;
+        letter-spacing: 0.5px;
+        margin: 0.8rem auto 0 !important;
+        max-width: 250px !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0.8rem;
+        max-width: 400px;
+    }
+
+    .logofolio-img {
+        max-height: 110px;
+        padding: 5px;
+        transform: rotate(-2deg) scale(0.96);
+        filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.12));
+    }
+
+    .logofolio-item {
+        animation: logoEntranceSmall 0.5s ease-out forwards;
+    }
+
+    @keyframes logoEntranceSmall {
+        from {
+            opacity: 0;
+            transform: rotate(-5deg) scale(0.92);
+        }
+        to {
+            opacity: 0.95;
+            transform: rotate(-2deg) scale(0.96);
+        }
+    }
+
+    .logofolio-item:hover .logofolio-img {
+        transform: rotate(0deg) scale(1.05);
+        filter: drop-shadow(0 10px 20px rgba(124, 58, 237, 0.35));
+    }
+
+    .logofolio-item:nth-child(even) .logofolio-img {
+        transform: rotate(2deg) scale(0.96);
+    }
+
+    .logofolio-item:nth-child(even):hover .logofolio-img {
+        transform: rotate(0deg) scale(1.05);
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .logofolio-section {
+        padding: 40px 0 !important;
+    }
+
+    .logofolio-section::before {
+        background-size: 15px 15px;
+        opacity: 0.15;
+    }
+
+    .logofolio-header {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .logofolio-title {
+        font-size: 2.5rem !important;
+    }
+
+    .logofolio-title::after {
+        width: 60px;
+        height: 2px;
+        bottom: -3px;
+    }
+
+    .logofolio-subtitle {
+        font-size: 0.9rem !important;
+        letter-spacing: 0.3px;
+        margin: 0.6rem auto 0 !important;
+        max-width: 200px !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        padding: 0.5rem;
+        max-width: 220px;
+    }
+
+    .logofolio-img {
+        max-height: 120px;
+        padding: 5px;
+        transform: rotate(-1deg) scale(0.98);
+    }
+
+    .logofolio-item {
+        animation: logoEntranceXSmall 0.5s ease-out forwards;
+    }
+
+    @keyframes logoEntranceXSmall {
+        from {
+            opacity: 0;
+            transform: rotate(-3deg) scale(0.95);
+        }
+        to {
+            opacity: 0.95;
+            transform: rotate(-1deg) scale(0.98);
+        }
+    }
+
+    .logofolio-item:hover .logofolio-img {
+        transform: rotate(0deg) scale(1.03);
+        filter: drop-shadow(0 8px 15px rgba(124, 58, 237, 0.3));
+    }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .logofolio-section {
+        padding: 40px 0 !important;
+        min-height: auto;
+    }
+
+    .logofolio-header {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .logofolio-title {
+        font-size: 3rem !important;
+    }
+
+    .logofolio-subtitle {
+        font-size: 1rem !important;
+        margin: 0.5rem auto 0 !important;
+    }
+
+    .logofolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .logofolio-img {
+        max-height: 90px;
+    }
+}

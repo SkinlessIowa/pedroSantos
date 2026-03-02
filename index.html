@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lp PedroSantos Portfolio</title>
+    <link rel="icon" href="mídia/page-mídia/P.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logofolio.css">
+</head>
+<body>
+    <!-- ========== LOADING SCREEN ========== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-animation">
+                <div class="loading-icon">
+                    <div class="loading-pen">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <div class="loading-code">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                <div class="loading-text">
+                    <h2>CARREGANDO PORTFÓLIO</h2>
+                        <div class="loading-dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                </div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-container">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-percentage" id="progressPercentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MODAL PROJETOS ========== -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-wrapper">
+            <div class="modal-content-wrapper">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalProjectTitle">Projeto</h2>
+                    <button class="modal-close-btn" id="modalCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FULLSCREEN MODAL ========== -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <div class="fullscreen-header">
+            <div class="fullscreen-url" id="fullscreenUrl"></div>
+            <div class="fullscreen-controls">
+                <button class="fs-control-btn" id="fsRefresh" title="Recarregar">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button class="fs-control-btn" id="fsClose" title="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="fullscreen-content">
+            <iframe id="fullscreenIframe" sandbox="allow-scripts allow-same-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- ========== NAVEGAÇÃO ========== -->
+    <nav id="navbar" class="navbar">
+        <a href="#" class="logo">
+            <span>PORTFOLIO</span>
+        </a>
+        
+        <button class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#design" class="nav-link">Design Gráfico</a></li>
+            <li><a href="#logofolio" class="nav-link">Logofólio</a></li>
+            <li><a href="#vectors" class="nav-link">Vetores</a></li>
+            <li><a href="#ui" class="nav-link">Figma Previews</a></li>
+            <li><a href="#web" class="nav-link active">Web Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <video class="hero-background" autoplay muted loop playsinline>
+            <source src="mídia/page-mídia/uhd_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="main-container">
+            <img class="hero-title" src="mídia/page-mídia/hero-title.png" alt="Creative × Technical">
+        <p class="hero-subtitle" id="animatedSubtitle">
+            <span class="word">2026</span>
+            <span class="word">Pedro</span>
+            <span class="word">Santos</span>
+            <span class="word">Portfolio</span>
+        </p>
+            
+            <div class="cta-buttons">
+                <a href="#design" class="btn btn-primary">
+                    <i class="fas fa-palette"></i> Ver Trabalhos
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i> Contatar
+                </a>
+                <a href="mídia/page-mídia/Currículo.png" download="Currículo.png" class="btn btn-highlight" id="downloadCV">
+                    <i class="fas fa-download"></i> Baixar CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ME ========== -->
+    <section id="about" class="section about-section">
+        <div class="main-container">
+            <div class="about-container">
+                <!-- Coluna Visual (Esquerda) -->
+                <div class="about-visual">
+                    <div class="visual-composition">
+                    <!-- Contêiner da animação alternada -->
+                        <div class="portrait-animation-container">
+                        <!-- Imagem 1: Foto Real -->
+                            <div class="portrait-item portrait-photo active">
+                                <img src="mídia/page-mídia/Design sem nome 2.png" alt="Foto Real">
+                            </div>
+            
+                        <!-- Imagem 2: Desenho Retrato -->
+                            <div class="portrait-item portrait-drawing">
+                                <img src="mídia/page-mídia/Pedro OC 2.png" alt="Desenho Retrato">
+                            </div>
+            
+                        <!-- Indicador minimalista -->
+                            <div class="portrait-indicator">
+                                <span class="indicator-dot active" data-target="0"></span>
+                                <span class="indicator-dot" data-target="1"></span>
+                            </div>
+                        </div>
+        
+                        <!-- Elementos flutuantes -->
+                        <div class="floating-element">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <div class="floating-element">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="floating-element">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="floating-element">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna de Conteúdo (Direita) -->
+                <div class="about-content">
+                    <h2 class="about-title">
+                        Olá! meu nome é <span class="accent">Pedro</span>, seja bem-vindo(a) ao meu portfólio
+                    </h2>
+
+                    <div class="about-text">
+                        <p>Nasci em 6 de novembro de 2004, em Brasília. Em 2024, formei-me em <span class="highlight-text">Design Gráfico</span> pela UDF, onde desenvolvi habilidades diversas na área envolvendo <span class="highlight-text">vetorização</span>, <span class="highlight-text">desenho de tipos(tipografia)</span>, <span class="highlight-text">produção de filmes</span>, <span class="highlight-text">editoração</span>, <span class="highlight-text">composição visual</span> etc.</p>
+
+                        <p>Paralelo a isso, cursei <span class="highlight-text">análise e desenvolvimento de sistemas</span> pelo CEUB, fiz dois semestres e tranquei a faculdade. No lugar, ingressei no curso de <span class="highlight-text">desenvolvimento web</span> do SENAC, onde eu pude expandir para além da minha área, e adquiri conhecimentos que abrangem <span class="highlight-text">HTML, CSS, JavaScript</span>, mais tarde <span class="highlight-text">SQL</span>, além dos fundamentos de <span class="highlight-text">banco de dados</span>. Por fora, eu estudei também <span class="highlight-text">PHP</span> e <span class="highlight-text">desenvolvimento de games em GML</span>; aprendi e conheci tipos variados de <span class="highlight-text">diagramas</span>, e como funciona na prática toda a parte documental da elaboração de um projeto web.</p>
+
+                        <p>Atuei como Analista Suporte Software TI até março de 2026, também sou vendedor de artesanatos, portanto minha experiência, além do campo técnico, também engloba <span class="highlight-text">comunicação</span>, <span class="highlight-text">trabalho em equipe</span>, <span class="highlight-text">coleta de requisitos</span> e <span class="highlight-text">pesquisas</span>.</p>
+                    </div>
+                
+                    <!-- Valores e Abordagem -->
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4 class="value-title">Detalhista</h4>
+                        </div>
+                    
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4 class="value-title">Ágil</h4>
+                        </div>
+                    
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="value-title">Colaborativo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IDENTIDADES VISUAIS ========== -->
+    <section id="design" class="section design-section">
+        <video src="mídia/identidades visuais/Identidades.mp4" autoplay muted loop playsinline class="identities-background"></video>
+    </section>
+    <hr class="section-divider design-divider">
+
+    <!-- ========== LOGOFÓLIO ========== -->
+    <section id="logofolio" class="section logofolio-section">
+        <div class="main-container">
+            <div class="section-header logofolio-header">
+                <h2 class="section-title logofolio-title">LOGOFOLIO</h2>
+                <p class="section-subtitle logofolio-subtitle">Selected Works Vol.1</p>
+            </div>
+        
+            <div class="logofolio-grid">
+                <div class="logofolio-item" style="--item-index: 1;">
+                    <img src="mídia/logo/Advogados-logo.png" 
+                         alt="SANJOSE Logo" class="logofolio-img">
+                </div>
+            
+                <div class="logofolio-item" style="--item-index: 2;">
+                    <img src="mídia/logo/André Lanches-logo.png" 
+                         alt="HUNTERG Logo" class="logofolio-img">
+                </div>
+            
+                <div class="logofolio-item" style="--item-index: 3;">
+                    <img src="mídia/logo/BellaVita-logo.png" 
+                         alt="CORO INFANTIL Logo" class="logofolio-img">
+                </div>
+            
+                <div class="logofolio-item" style="--item-index: 4;">
+                    <img src="mídia/logo/Cartilhas-logo.png" 
+                         alt="EMAUS Logo" class="logofolio-img">
+                </div>
+            
+                <div class="logofolio-item" style="--item-index: 5;">
+                    <img src="mídia/logo/ClynicFlex-logo.png" 
+                         alt="PARROQUIA Logo" class="logofolio-img">
+                </div>
+
+                <div class="logofolio-item" style="--item-index: 0;">
+                    <img src="mídia/logo/Ronron Café-logo.png" 
+                         alt="BANCO Logo" class="logofolio-img">
+                </div>
+
+                <div class="logofolio-item" style="--item-index: 0;">
+                    <img src="mídia/logo/TechEduca-logo.png" 
+                         alt="BANCO Logo" class="logofolio-img">
+                </div>
+
+                <div class="logofolio-item" style="--item-index: 0;">
+                    <img src="mídia/logo/VetCare-logo.png" 
+                         alt="BANCO Logo" class="logofolio-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VETORES ========== -->
+    <hr class="section-divider vector-divider">
+    <section id="vectors" class="section vector-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2 class="section-title">Arte Vetorial</h2>
+            </div>
+            
+        <div class="first-child">
+            <div class="portfolio-item" data-category="vector" data-project="vector1">
+                <img src="mídia/vetores/Frame 1(2).png" alt="Brasília Vetor para Ecobag" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>
+                    <h3 class="portfolio-title">Brasília Vetor para Ecobag</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="vector" data-project="vector2">
+                <img src="mídia/vetores/Frame 2.png" alt="Zé Gotinha Monge Vetor" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>
+                    <h3 class="portfolio-title">Zé Gotinha Monge Vetor</h3>
+                </div>
+            </div>
+        
+            <div class="portfolio-item" data-category="vector" data-project="vector3">
+                <img src="mídia/vetores/Frame 8(1).png" alt="Zé Gotinha trajado branco da Umbanda Vetor" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>
+                    <h3 class="portfolio-title">Zé Gotinha Umbanda Vetor</h3>
+                </div>
+            </div>
+        
+            <div class="portfolio-item" data-category="vector" data-project="vector4">
+                <img src="mídia/vetores/Frame-SUS-Logo.png" alt="Logo SUS Vetor" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>       
+                    <h3 class="portfolio-title">Logo SUS Vetor</h3>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="vector" data-project="vector5">
+                <img src="mídia/vetores/Frame-Wonder-Woman.png" alt="Zé Gotinha Vetor Mulher Maravilha" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>       
+                    <h3 class="portfolio-title">Zé Gotinha Mulher Maravilha</h3>
+                </div>
+            </div>
+        
+            <div class="portfolio-item" data-category="vector" data-project="vector6">
+                <img src="mídia/vetores/Frame-Zé-Gotinha.png" alt="Zé Gotinha Vetor" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>       
+                    <h3 class="portfolio-title">Zé Gotinha Vetor</h3>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="vector" data-project="vector7">
+                <img src="mídia/vetores/Frame 1(3).png" alt="Símbolo Vetor Silhueta" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Vetor</span>
+                    <h3 class="portfolio-title">Símbolo Vetor Silhueta</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider vector-divider">
+
+    <!-- ========== UI/UX DESIGN - FIGMA PREVIEWS ========== -->
+
+    <section id="ui" class="section uiux-preview-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2 class="section-title">Figma Previews</h2>
+            </div>
+        
+            <!-- Container Principal dos Previews -->
+            <div class="uiux-preview-container">
+                <!-- Painel de Preview Figma -->
+                <div class="figma-preview-area">
+                    <!-- Header do Figma -->
+                    <div class="figma-preview-header">
+                        <div class="figma-brand">
+                            <i class="fab fa-figma figma-logo"></i>
+                            <span class="figma-project-name" id="figmaProjectName">Carregando projeto...</span>
+                        </div>
+                    
+                        <div class="figma-controls">
+                            <button class="figma-control-btn" id="openFigma">
+                                <i class="fab fa-figma"></i> Abrir no Figma
+                            </button>
+                            <button class="figma-control-btn" id="downloadAssets">
+                                <i class="fas fa-download"></i> Recursos
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- Área do Preview -->
+                    <div class="figma-preview-wrapper">
+                        <!-- Container da Imagem -->
+                        <div class="figma-image-container" id="figmaImageContainer">
+                            <img src="" alt="UI Design Preview" class="figma-image" id="figmaImage">
+                        
+                            <!-- Loader -->
+                            <div class="figma-loader">
+                                <div class="loader-content">
+                                    <div class="loader-spinner" style="border-top-color: #9B59B6;"></div>
+                                    <p style="color: #333; font-weight: 600; margin-top: 1rem;">Carregando design...</p>
+                                </div>
+                            </div>
+                        
+                            <!-- Toolbar de Zoom -->
+                            <div class="zoom-toolbar">
+                                <button class="zoom-btn" id="zoomOut" title="Zoom Out">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <span class="zoom-level" id="zoomLevel">100%</span>
+                                <button class="zoom-btn" id="zoomIn" title="Zoom In">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button class="zoom-btn" id="zoomReset" title="Reset Zoom">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    
+                        <!-- Painel de Informações -->
+                        <div class="figma-info-panel">
+                            <div class="project-description" id="figmaDescription">
+                                <!-- Conteúdo será carregado via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Navegação e Controles -->
+            <div class="uiux-navigation">
+                <!-- Miniaturas -->
+                <div class="uiux-thumbnails" id="uiuxThumbnailsContainer">
+                    <!-- Miniaturas serão carregadas via JavaScript -->
+                </div>
+            
+                <!-- Controles de Navegação -->
+                <div class="uiux-controls">
+                    <button class="uiux-nav-btn uiux-prev-btn" title="Projeto anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="uiux-nav-btn uiux-next-btn" title="Próximo projeto">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WEB PROJECTS ========== -->
+    <section id="web" class="section web-preview-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2 class="section-title">Projetos Web Interativos</h2>
+            </div>
+
+            <!-- Container Principal do Preview -->
+            <div class="web-preview-container">
+                <!-- Painel Central - Visualização Expandida -->
+                <div class="dynamic-preview-area">
+                    <!-- Header com Controles Consolidados -->
+                    <div class="preview-header">
+                        <div class="preview-controls">
+                            <div class="control-group">
+                                <span class="current-project-display" id="currentProjectDisplay">1/8</span>
+                                <span class="project-name" id="projectName">Carregando...</span>
+                            </div>
+
+                            <div class="control-buttons">
+                                <button class="control-btn prev-btn" title="Projeto anterior">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="control-btn pause-play" id="pausePlayBtn" title="Iniciar auto-play">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="control-btn next-btn" title="Próximo projeto">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="control-group">
+                                <button class="control-btn" id="fullscreenPreview" title="Tela cheia">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                                <button class="control-btn" id="refreshPreview" title="Recarregar">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Área do Preview Expandido -->
+                    <div class="preview-wrapper">
+                        <div class="device-mockup desktop" id="deviceMockup">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <!-- Iframe para preview dinâmico -->
+                                    <iframe id="dynamicIframe"
+                                            class="dynamic-iframe"
+                                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                                            title="Preview do Projeto"
+                                            loading="eager">
+                                    </iframe>
+
+                                    <!-- Overlay de carregamento -->
+                                    <div class="preview-loader">
+                                        <div class="loader-content">
+                                            <div class="loader-spinner"></div>
+                                            <p style="color: var(--dark); font-weight: 600; margin-top: 1rem;">Carregando projeto...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Painel de Interação Simplificado -->
+                        <div class="interaction-panel">
+                            <div class="interaction-info">
+                                <span class="timer-display">
+                                    <i class="fas fa-clock"></i> Próximo em: <span id="autoTimer">10</span>s
+                                </span>
+                                <span class="interaction-hint">
+                                    <i class="fas fa-mouse-pointer"></i> Clique na pré-visualização para interagir
+                                </span>
+                            </div>
+
+                            <div class="interaction-actions">
+                                <button class="action-btn-small" data-action="scroll-down">
+                                    <i class="fas fa-arrow-down"></i> Rolar para baixo
+                                </button>
+                                <button class="action-btn-small" data-action="scroll-top">
+                                    <i class="fas fa-arrow-up"></i> Voltar ao topo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navegação Inferior -->
+                <div class="bottom-navigation">
+                    <!-- Miniaturas dos Projetos -->
+                    <div class="thumbnails-container" id="thumbnailsContainer">
+                        <!-- Miniaturas serão carregadas via JavaScript -->
+                    </div>
+
+                    <!-- Botões de Ação Principais -->
+                    <div class="main-actions">
+                        <button class="main-action-btn primary" id="openProject">
+                            <i class="fas fa-external-link-alt"></i> Abrir em Nova Guia
+                        </button>
+                        <button class="main-action-btn secondary" id="viewProjectDetails">
+                            <i class="fas fa-info-circle"></i> Detalhes do Projeto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HABILIDADES ========== -->
+    <section id="skills" class="section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Tools</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <ul class="skill-list">
+                        <li>Adobe Office</li>
+                        <li>Figma</li>
+                        <li>Canva</li>
+                        <li>GIMP</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desenvolvimento</h3>
+                    <ul class="skill-list">
+                        <li>HTML/CSS/JS</li>
+                        <li>MySQL</li>
+                        <li>PHP</li>
+                        <li>GML</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Ilustração</h3>
+                    <ul class="skill-list">
+                        <li>Krita</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Blender 3D</li>
+                        <li>PaintTool SAI</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Edição de Vídeo</h3>
+                    <ul class="skill-list">
+                        <li>CapCut</li>
+                        <li>Adobe Premiere</li>
+                        <li>Adobe After Effects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="main-container">
+            <div class="section-header">
+                <h2 class="section-title">Contato</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Entre em Contato</h3>
+                    <p>Estou disponível para novos projetos e colaborações</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>santos.86pp@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>+55 (61) 99317-8204</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localização</h4>
+                                <p>Brasília, DF</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/SkinlessIowa" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/pedro-santos-b79017315/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/skinl_essi/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+   
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="nome" class="form-control" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Seu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="assunto" class="form-control" placeholder="Assunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="mensagem" class="form-control" placeholder="Sua Mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="main-container">
+            <div class="footer-content">
+                <div>
+                    <h3>Pedro Santos</h3>
+                    <p>Designer gráfico & Desenvolvedor Front-end.</p>
+                </div>
+                
+                <div>
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#design">Design</a></li>
+                        <li><a href="#logofolio">Logofólio</a></li>
+                        <li><a href="#vectors">Vetores</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Serviços</h3>
+                    <ul class="footer-links">
+                        <li>Brand Identity</li>
+                        <li>Logo Design</li>
+                        <li>UI/UX Design</li>
+                        <li>Desenvolvimento Web</li>
+                        <li>Edição de Vídeo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

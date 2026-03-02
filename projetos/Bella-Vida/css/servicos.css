@@ -1,0 +1,204 @@
+@import url('./style.css');
+
+.page-header {
+    height: 50vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/sala\ de\ tratamento-2.jpg') center/cover;
+    opacity: 0.1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: bolder;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.servicos-section {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.categoria-servico {
+    margin-bottom: 80px;
+}
+
+.categoria-servico h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.categoria-servico .categoria-descricao {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.servico-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 21px 21px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.servico-card .servico-icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: var(--primary-color);
+}
+
+.servico-icon img {
+    width: 100%;
+    height: 190px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    display: block;
+    margin: 0 0 18px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card .servico-icon img {
+    margin-bottom: 0;
+}
+
+.servico-card:hover .servico-icon img {
+    transform: scale(1.05); /* Apenas zoom suave */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.servico-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.servico-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.servico-card .preco {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.servico-card .btn-agendar {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, background 0.3s ease;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.servico-card .btn-agendar:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+}
+
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.cta-section .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    .categoria-servico h3 {
+        font-size: 2rem;
+    }
+    .servico-card {
+        padding: 20px;
+    }
+    .servico-card h4 {
+        font-size: 1.3rem;
+    }
+    .servico-card p {
+        font-size: 0.95rem;
+    }
+}

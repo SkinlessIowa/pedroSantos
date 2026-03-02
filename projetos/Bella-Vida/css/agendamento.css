@@ -1,0 +1,246 @@
+@import url('./style.css');
+
+.page-header {
+    height: 50vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/modelo\ 2.jpg') center/cover;
+    opacity: 0.1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: bolder;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a seção principal de agendamento */
+.booking-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seção de informações */
+.booking-info,
+.booking-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.booking-info:hover,
+.booking-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 35px;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 280px;
+    border-radius: 2px;
+    margin: 8px auto 0 auto;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.booking-info ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.booking-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+}
+
+.booking-info i {
+    color: var(--primary-color);
+}
+
+.contact-box {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(152, 251, 152, 0.1));
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.contact-box h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-box i {
+    color: var(--accent-color);
+}
+
+/* Formulário de agendamento */
+.input-single {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-single label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    cursor: text;
+    transition: all 0.3s ease;
+    color: #808080;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.input-single .input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #808080;
+    outline: 0;
+    font-size: 1rem;
+    padding: 5px 0;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.input-single .input:focus {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.input-single .input:focus ~ label,
+.input-single .input:not(:placeholder-shown) ~ label {
+    transform: translateY(-20px);
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.input-single .input:not(:focus):placeholder-shown ~ label {
+    transform: translateY(0);
+    font-size: 1rem;
+    color: #808080;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0; /* Espaço entre os itens do formulário */
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--light-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Centraliza o botão igual ao contato */
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Botão com gradiente igual ao contato */
+.btn-gradient {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-info,
+    .booking-form {
+        padding: 20px;
+    }
+}

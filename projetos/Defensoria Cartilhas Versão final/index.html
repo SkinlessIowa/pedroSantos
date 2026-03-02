@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defensoria Cartilhas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="image/Logo-White.png" alt="Logo Defensoria Cartilhas">
+            <h1>Defensoria Cartilhas</h1>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="#" id="favorites-link">Favoritos</a></li>
+            <li><a href="#" id="login-link">Login</a></li>
+            <li><a href="#" id="logout-link">Sair</a></li>
+            <li id="admin-link"><a href="#admin">Modo Admin</a></li>
+            <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </header>
+
+    <section class="banner">
+        <h2>Bem-vindo à Loja de Cartilhas da Defensoria Pública</h2>
+        <p>Explore nosso catálogo de cartilhas educativas e conheça seus direitos!</p>
+        <a href="catalogo.html" class="cta-button">Ver Catálogo Completo</a>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Sobre a Defensoria Cartilhas</h2>
+            <p>A Defensoria Cartilhas é uma iniciativa da Defensoria Pública do Distrito Federal para promover o acesso à informação jurídica e educacional. Nosso objetivo é empoderar cidadãos com conhecimento sobre seus direitos e deveres, oferecendo cartilhas em temas como Direitos Humanos, Saúde e Educação. Navegue pelo nosso catálogo e descubra recursos que podem transformar vidas!</p>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2>Categorias em Destaque</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-aos="fade-up">
+                    <h3>Direitos Humanos</h3>
+                    <p>Conheça seus direitos fundamentais e como a Defensoria Pública pode ajudar.</p>
+                    <a href="catalogo.html?category=Direitos Humanos" class="btn btn-primary">Explorar</a>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Educação</h3>
+                    <p>Aprenda sobre cidadania, inclusão e educação financeira.</p>
+                    <a href="catalogo.html?category=Educação" class="btn btn-primary">Explorar</a>
+                </div>
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Saúde</h3>
+                    <p>Informações sobre direitos à saúde e acesso ao SUS.</p>
+                    <a href="catalogo.html?category=Saúde" class="btn btn-primary">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2>Cartilhas em Destaque</h2>
+            <div id="featured-cartilhas" class="cartilhas-grid"></div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- Coluna 1: Logo e descrição -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="image/logo.png" alt="Logo Defensoria Cartilhas">
+                    <h3>Defensoria Cartilhas</h3>
+                </div>
+                <p>Uma iniciativa da Defensoria Pública do Distrito Federal em parceria com Senac e Sesc, promovendo acesso à informação jurídica e educacional.</p>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+    
+            <!-- Coluna 2: Links úteis -->
+            <div class="footer-column footer-links">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Início</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-chevron-right"></i> Catálogo</a></li>
+                    <li><a href="#footer"><i class="fas fa-chevron-right"></i> Fale Conosco</a></li>
+                    <li><a href="#" id="favorites-link"><i class="fas fa-chevron-right"></i> Favoritos</a></li>
+                    <li><a href="#" id="login-link"><i class="fas fa-chevron-right"></i> Área do Usuário</a></li>
+                </ul>
+            </div>
+    
+            <!-- Coluna 3: Contato e Parceiros -->
+            <div class="footer-column">
+                <div class="footer-contact">
+                    <h4>Entre em contato</h4>
+                    <div class="footer-address">
+                        <p><i class="fas fa-map-marker-alt"></i> SCS QD. 6, BL A, LT. 206, ED. NEWTON ROSSI, 5º ANDAR</p>
+                        <p><i class="fas fa-phone"></i> (61) 3962-2023</p>
+                        <p><i class="fas fa-envelope"></i> contato@defensoriacartilhas.org.br</p>
+                        <p><i class="fas fa-clock"></i> Seg-Sex: 8h às 18h</p>
+                    </div>
+                </div>
+                
+                <div class="footer-partners">
+                   
+                    <div class="partners-grid">
+                        <img src="image/fecomercio-df-removebg-preview.png" alt="SESC" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Defensoria Cartilhas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

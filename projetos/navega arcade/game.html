@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Navega Arcade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="arcade-machine">
+        <div class="marquee">KOF 2002</div>
+        <div class="screen">
+            <div id="game-container"></div>
+        </div>
+        <div class="controls-panel">
+            COIN INSERT
+        </div>
+    </div>
+
+   <script>
+  window.onload = function () {
+    window.EJS_player = '#game-container';
+    window.EJS_core = 'arcade';
+    window.EJS_gameUrl = "kof2002.zip";
+    window.EJS_biosUrl = "neogeo.zip";
+    window.EJS_pathtodata = 'data/';
+    window.EJS_startOnLoaded = true;
+
+    const script = document.createElement('script');
+    script.src = 'data/loader.js';
+    document.body.appendChild(script);
+  };
+</script>
+
+</body>
+</html>

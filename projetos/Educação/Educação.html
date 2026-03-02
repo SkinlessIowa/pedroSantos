@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechEduca - Formação Tecnológica para Professores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e variáveis CSS */
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #4CAF50;
+            --accent: #FF9800;
+            --light: #f5f9ff;
+            --dark: #1a237e;
+            --gray: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Container principal */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #3d8b40;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-text {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .hero-image {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* Seção de módulos */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .modules {
+            padding: 60px 0;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+        
+        .module-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .module-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .module-progress {
+            margin-top: 20px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Seção de dashboard */
+        .dashboard {
+            padding: 60px 0;
+            background-color: #f0f7ff;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        
+        .dashboard-card h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .activity-list {
+            list-style: none;
+        }
+        
+        .activity-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            background-color: #e3f2fd;
+            color: var(--primary);
+        }
+        
+        .badge-secondary {
+            background-color: #e8f5e9;
+            color: var(--secondary);
+        }
+        
+        .badge-accent {
+            background-color: #fff3e0;
+            color: var(--accent);
+        }
+        
+        /* Seção de comunidade */
+        .community {
+            padding: 60px 0;
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .forum-topics {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .topic-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+        
+        .topic-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .topic-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Formulário de login/simulação */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .modal-header h2 {
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content,
+            .dashboard-grid,
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="Frame 4.png">
+                </div>
+                <div class="logo-text">Tech<span>Educa</span></div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#modules"><i class="fas fa-graduation-cap"></i> Módulos</a></li>
+                    <li><a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#community"><i class="fas fa-users"></i> Comunidade</a></li>
+                    <li><a href="#resources"><i class="fas fa-book"></i> Recursos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <button class="btn btn-outline" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </button>
+                <button class="btn btn-primary" id="registerBtn">
+                    <i class="fas fa-user-plus"></i> Cadastre-se
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Formação Tecnológica para Professores</h1>
+                <p>Capacite-se no uso de ferramentas digitais para transformar suas aulas em experiências interativas, dinâmicas e alinhadas com a realidade dos alunos.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="startLearningBtn">
+                        <i class="fas fa-play-circle"></i> Começar a Aprender
+                    </button>
+                    <button class="btn btn-outline" id="tourBtn">
+                        <i class="fas fa-video"></i> Ver Demonstração
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="teacherCount">2.5k</span>
+                        <span class="stat-text">Professores capacitados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="moduleCount">48</span>
+                        <span class="stat-text">Módulos disponíveis</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="activityCount">1.2k</span>
+                        <span class="stat-text">Atividades práticas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="pexels-iamhogir-17801348.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos -->
+    <section class="modules" id="modules">
+        <div class="container">
+            <div class="section-title">
+                <h2>Módulos de Formação</h2>
+                <p>Selecione um módulo para começar sua jornada de capacitação tecnológica</p>
+            </div>
+            
+            <div class="modules-grid" id="modulesGrid">
+                <!-- Módulos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meu Progresso</h2>
+                <p>Acompanhe seu desenvolvimento e conquistas na plataforma</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-tasks"></i> Atividades Recentes</h3>
+                        <ul class="activity-list" id="activityList">
+                            <!-- Atividades serão inseridas via JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-calendar-alt"></i> Próximas Formações</h3>
+                        <ul class="activity-list" id="upcomingList">
+                            <!-- Eventos serão inseridos via JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-trophy"></i> Conquistas</h3>
+                        <div id="achievements">
+                            <!-- Conquistas serão inseridas via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-chart-pie"></i> Estatísticas</h3>
+                        <div class="stats-container" id="statsContainer">
+                            <!-- Estatísticas serão inseridas via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunidade -->
+    <section class="community" id="community">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comunidade de Professores</h2>
+                <p>Conecte-se com outros educadores, compartilhe experiências e aprenda em conjunto</p>
+            </div>
+            
+            <div class="community-grid">
+                <div class="forum-topics">
+                    <h3>Tópicos em Destaque</h3>
+                    <div id="forumTopics">
+                        <!-- Tópicos serão inseridos via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-comments"></i> Chat da Comunidade</h3>
+                    <div id="chatContainer">
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Mensagens do chat serão inseridas via JavaScript -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" class="form-control" id="messageInput" placeholder="Digite sua mensagem...">
+                            <button class="btn btn-primary" id="sendMessageBtn" style="margin-top: 10px;">
+                                <i class="fas fa-paper-plane"></i> Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Login/Registro -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <h2>Acessar Plataforma</h2>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="seu.email@escola.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" class="form-control" placeholder="Digite sua senha" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-sign-in-alt"></i> Entrar
+                    </button>
+                </div>
+                
+                <div class="form-group text-center">
+                    <p>Não tem uma conta? <a href="#" id="switchToRegister">Cadastre-se</a></p>
+                </div>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="regName">Nome completo</label>
+                    <input type="text" id="regName" class="form-control" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail">E-mail</label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="seu.email@escola.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regSchool">Escola/Instituição</label>
+                    <input type="text" id="regSchool" class="form-control" placeholder="Onde você leciona" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regSubject">Disciplina</label>
+                    <select id="regSubject" class="form-control" required>
+                        <option value="">Selecione sua disciplina</option>
+                        <option value="portugues">Língua Portuguesa</option>
+                        <option value="matematica">Matemática</option>
+                        <option value="ciencias">Ciências</option>
+                        <option value="historia">História</option>
+                        <option value="geografia">Geografia</option>
+                        <option value="ingles">Inglês</option>
+                        <option value="artes">Artes</option>
+                        <option value="educacao-fisica">Educação Física</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="outra">Outra</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">Senha</label>
+                    <input type="password" id="regPassword" class="form-control" placeholder="Crie uma senha segura" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-user-plus"></i> Criar Conta
+                    </button>
+                </div>
+                
+                <div class="form-group text-center">
+                    <p>Já tem uma conta? <a href="#" id="switchToLogin">Faça login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>TechEduca</h3>
+                    <p>Plataforma de formação tecnológica contínua para professores, promovendo a integração de ferramentas digitais na prática pedagógica.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Planos de Aula</a></li>
+                        <li><a href="#">Tutoriais em Vídeo</a></li>
+                        <li><a href="#">Ferramentas Digitais</a></li>
+                        <li><a href="#">Repositório de Atividades</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Parceiros</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Ministério da Educação</a></li>
+                        <li><a href="#">SENAC</a></li>
+                        <li><a href="#">Google for Education</a></li>
+                        <li><a href="#">Microsoft Educação</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 TechEduca - Formação Tecnológica para Professores. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart" style="color: #e74c3c;"></i> para a educação brasileira</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dados simulados para a aplicação
+        const modulesData = [
+            { id: 1, title: "Introdução à Tecnologia na Educação", icon: "fas fa-laptop-code", description: "Conceitos básicos e importância da tecnologia no contexto educacional", progress: 75, category: "básico" },
+            { id: 2, title: "Google Classroom na Prática", icon: "fas fa-chalkboard", description: "Domine a plataforma Google Classroom para organização e atividades", progress: 30, category: "intermediário" },
+            { id: 3, title: "Criação de Apresentações Dinâmicas", icon: "fas fa-presentation", description: "PowerPoint, Canva e outras ferramentas para criar slides atrativos", progress: 0, category: "básico" },
+            { id: 4, title: "Edição de Vídeos para Aulas", icon: "fas fa-video", description: "Aprenda a criar e editar vídeos educativos de forma simples", progress: 10, category: "avançado" },
+            { id: 5, title: "Gamificação na Educação", icon: "fas fa-gamepad", description: "Use elementos de jogos para engajar os alunos nas atividades", progress: 0, category: "intermediário" },
+            { id: 6, title: "Avaliações Digitais Interativas", icon: "fas fa-poll", description: "Crie avaliações online com feedback imediato", progress: 50, category: "intermediário" }
+        ];
+
+        const activitiesData = [
+            { id: 1, title: "Você completou o módulo 'Introdução à Tecnologia'", time: "2 horas atrás", icon: "fas fa-check-circle", badge: "badge-primary" },
+            { id: 2, title: "Novo comentário no fórum 'Dificuldades com Projetor'", time: "5 horas atrás", icon: "fas fa-comment", badge: "badge-secondary" },
+            { id: 3, title: "Atividade prática 'Crie sua primeira apresentação' disponível", time: "1 dia atrás", icon: "fas fa-tasks", badge: "badge-accent" },
+            { id: 4, title: "Você ganhou a conquista 'Iniciante Digital'", time: "2 dias atrás", icon: "fas fa-trophy", badge: "badge-primary" }
+        ];
+
+        const upcomingData = [
+            { id: 1, title: "Webinar: Ferramentas Google para Educação", date: "15/10 às 19h", icon: "fas fa-calendar" },
+            { id: 2, title: "Workshop: Edição de Vídeos com Canva", date: "18/10 às 14h", icon: "fas fa-video" },
+            { id: 3, title: "Live: Gamificação na Prática", date: "22/10 às 16h", icon: "fas fa-gamepad" }
+        ];
+
+        const achievementsData = [
+            { id: 1, title: "Iniciante Digital", description: "Complete seu primeiro módulo", icon: "fas fa-star", achieved: true },
+            { id: 2, title: "Comunicador", description: "Participe de 5 discussões no fórum", icon: "fas fa-comments", achieved: true },
+            { id: 3, title: "Mestre das Apresentações", description: "Crie 10 apresentações interativas", icon: "fas fa-presentation", achieved: false },
+            { id: 4, title: "Colaborador", description: "Compartilhe 3 planos de aula", icon: "fas fa-share-alt", achieved: false }
+        ];
+
+        const forumTopicsData = [
+            { id: 1, title: "Como usar o Google Classroom com alunos do fundamental?", author: "Maria Silva", replies: 24, lastActivity: "2 horas" },
+            { id: 2, title: "Dificuldades com projetor em sala de aula", author: "João Santos", replies: 18, lastActivity: "5 horas" },
+            { id: 3, title: "Sugestões de apps para gamificação", author: "Ana Oliveira", replies: 32, lastActivity: "1 dia" },
+            { id: 4, title: "Experiências com ensino híbrido", author: "Carlos Mendes", replies: 41, lastActivity: "2 dias" }
+        ];
+
+        const chatMessagesData = [
+            { id: 1, author: "Mariana (Prof. História)", message: "Alguém já usou o Padlet para atividades colaborativas?", time: "10:30" },
+            { id: 2, author: "Roberto (Prof. Matemática)", message: "Sim, é excelente! Posso compartilhar um exemplo.", time: "10:32" },
+            { id: 3, author: "Sistema", message: "Lembretes: Webinar sobre Google Classroom amanhã às 19h", time: "10:35" }
+        ];
+
+        // Variáveis de estado
+        let currentUser = null;
+        let isLoggedIn = false;
+
+        // Inicialização da aplicação
+        document.addEventListener('DOMContentLoaded', function() {
+            renderModules();
+            renderActivities();
+            renderUpcoming();
+            renderAchievements();
+            renderForumTopics();
+            renderChatMessages();
+            setupEventListeners();
+            updateStats();
+        });
+
+        // Renderiza os módulos na página
+        function renderModules() {
+            const modulesGrid = document.getElementById('modulesGrid');
+            modulesGrid.innerHTML = '';
+            
+            modulesData.forEach(module => {
+                const moduleCard = document.createElement('div');
+                moduleCard.className = 'module-card';
+                moduleCard.innerHTML = `
+                    <div class="module-icon">
+                        <i class="${module.icon}"></i>
+                    </div>
+                    <span class="badge ${getBadgeClass(module.category)}">${module.category}</span>
+                    <h3>${module.title}</h3>
+                    <p>${module.description}</p>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${module.progress}%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span>Progresso</span>
+                            <span>${module.progress}%</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" style="margin-top: 15px; width: 100%;" onclick="startModule(${module.id})">
+                        ${module.progress === 0 ? 'Começar' : module.progress === 100 ? 'Revisar' : 'Continuar'}
+                    </button>
+                `;
+                
+                modulesGrid.appendChild(moduleCard);
+            });
+        }
+
+        // Renderiza as atividades recentes
+        function renderActivities() {
+            const activityList = document.getElementById('activityList');
+            activityList.innerHTML = '';
+            
+            activitiesData.forEach(activity => {
+                const activityItem = document.createElement('li');
+                activityItem.className = 'activity-item';
+                activityItem.innerHTML = `
+                    <div class="activity-icon">
+                        <i class="${activity.icon}"></i>
+                    </div>
+                    <div>
+                        <div class="activity-title">${activity.title}</div>
+                        <div class="activity-time">${activity.time}</div>
+                    </div>
+                    <span class="${activity.badge}">Novo</span>
+                `;
+                
+                activityList.appendChild(activityItem);
+            });
+        }
+
+        // Renderiza os próximos eventos
+        function renderUpcoming() {
+            const upcomingList = document.getElementById('upcomingList');
+            upcomingList.innerHTML = '';
+            
+            upcomingData.forEach(event => {
+                const eventItem = document.createElement('li');
+                eventItem.className = 'activity-item';
+                eventItem.innerHTML = `
+                    <div class="activity-icon">
+                        <i class="${event.icon}"></i>
+                    </div>
+                    <div>
+                        <div class="activity-title">${event.title}</div>
+                        <div class="activity-time">${event.date}</div>
+                    </div>
+                    <button class="btn btn-primary btn-small" onclick="registerForEvent(${event.id})">
+                        Inscrever-se
+                    </button>
+                `;
+                
+                upcomingList.appendChild(eventItem);
+            });
+        }
+
+        // Renderiza as conquistas
+        function renderAchievements() {
+            const achievementsContainer = document.getElementById('achievements');
+            achievementsContainer.innerHTML = '';
+            
+            achievementsData.forEach(achievement => {
+                const achievementItem = document.createElement('div');
+                achievementItem.className = 'activity-item';
+                achievementItem.innerHTML = `
+                    <div class="activity-icon" style="background-color: ${achievement.achieved ? '#e8f5e9' : '#f5f5f5'}; color: ${achievement.achieved ? '#4CAF50' : '#999'}">
+                        <i class="${achievement.icon}"></i>
+                    </div>
+                    <div>
+                        <div class="activity-title">${achievement.title}</div>
+                        <div class="activity-time">${achievement.description}</div>
+                    </div>
+                    ${achievement.achieved ? 
+                        '<span class="badge badge-secondary"><i class="fas fa-check"></i> Conquistado</span>' : 
+                        '<span class="badge" style="background-color: #f5f5f5; color: #999"><i class="fas fa-lock"></i> Bloqueado</span>'}
+                `;
+                
+                achievementsContainer.appendChild(achievementItem);
+            });
+        }
+
+        // Renderiza os tópicos do fórum
+        function renderForumTopics() {
+            const forumTopics = document.getElementById('forumTopics');
+            forumTopics.innerHTML = '';
+            
+            forumTopicsData.forEach(topic => {
+                const topicItem = document.createElement('div');
+                topicItem.className = 'topic-item';
+                topicItem.innerHTML = `
+                    <div class="topic-title">${topic.title}</div>
+                    <div class="topic-meta">
+                        <span>Por ${topic.author}</span>
+                        <span>${topic.replies} respostas • ${topic.lastActivity} atrás</span>
+                    </div>
+                `;
+                
+                forumTopics.appendChild(topicItem);
+            });
+        }
+
+        // Renderiza as mensagens do chat
+        function renderChatMessages() {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = '';
+            
+            chatMessagesData.forEach(msg => {
+                const messageItem = document.createElement('div');
+                messageItem.className = 'activity-item';
+                messageItem.innerHTML = `
+                    <div>
+                        <div class="activity-title"><strong>${msg.author}:</strong> ${msg.message}</div>
+                        <div class="activity-time">${msg.time}</div>
+                    </div>
+                `;
+                
+                chatMessages.appendChild(messageItem);
+            });
+            
+            // Rolar para a última mensagem
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Atualiza as estatísticas
+        function updateStats() {
+            const totalProgress = modulesData.reduce((sum, module) => sum + module.progress, 0);
+            const avgProgress = Math.round(totalProgress / modulesData.length);
+            
+            document.getElementById('statsContainer').innerHTML = `
+                <div class="progress-bar" style="margin-bottom: 15px;">
+                    <div class="progress-fill" style="width: ${avgProgress}%"></div>
+                </div>
+                <div class="progress-text">
+                    <span>Progresso médio</span>
+                    <span>${avgProgress}%</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <div class="activity-title">Tempo de estudo</div>
+                            <div class="activity-time">15 horas</div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div>
+                            <div class="activity-title">Módulos concluídos</div>
+                            <div class="activity-time">2 de 6</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Configura os event listeners
+        function setupEventListeners() {
+            // Botões de login/registro
+            document.getElementById('loginBtn').addEventListener('click', () => {
+                openModal('login');
+            });
+            
+            document.getElementById('registerBtn').addEventListener('click', () => {
+                openModal('register');
+            });
+            
+            document.getElementById('startLearningBtn').addEventListener('click', () => {
+                if (isLoggedIn) {
+                    alert('Redirecionando para o primeiro módulo...');
+                } else {
+                    openModal('login');
+                }
+            });
+            
+            document.getElementById('tourBtn').addEventListener('click', () => {
+                alert('Iniciando tour pela plataforma...');
+            });
+            
+            // Fechar modal
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            
+            // Alternar entre login e registro
+            document.getElementById('switchToRegister').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            });
+            
+            document.getElementById('switchToLogin').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            });
+            
+            // Enviar mensagem no chat
+            document.getElementById('sendMessageBtn').addEventListener('click', sendMessage);
+            document.getElementById('messageInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Formulários de login e registro
+            document.getElementById('loginForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                handleLogin();
+            });
+            
+            document.getElementById('registerForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                handleRegistration();
+            });
+            
+            // Fechar modal ao clicar fora
+            window.addEventListener('click', (e) => {
+                const modal = document.getElementById('loginModal');
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Funções de utilidade
+        function getBadgeClass(category) {
+            switch(category) {
+                case 'básico': return 'badge-primary';
+                case 'intermediário': return 'badge-secondary';
+                case 'avançado': return 'badge-accent';
+                default: return 'badge-primary';
+            }
+        }
+
+        function openModal(type) {
+            const modal = document.getElementById('loginModal');
+            modal.style.display = 'flex';
+            
+            if (type === 'register') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            } else {
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function handleLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                // Simulação de login bem-sucedido
+                currentUser = {
+                    name: "Professor Exemplo",
+                    email: email,
+                    school: "Escola Municipal Exemplo",
+                    subject: "Português"
+                };
+                
+                isLoggedIn = true;
+                
+                // Atualizar interface para usuário logado
+                document.getElementById('loginBtn').innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+                document.getElementById('registerBtn').innerHTML = `<i class="fas fa-sign-out-alt"></i> Sair`;
+                document.getElementById('registerBtn').onclick = handleLogout;
+                
+                closeModal();
+                alert(`Bem-vindo(a), ${currentUser.name}!`);
+                
+                // Atualizar estatísticas com dados do usuário
+                document.getElementById('teacherCount').textContent = "2.7k";
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        function handleRegistration() {
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const school = document.getElementById('regSchool').value;
+            const subject = document.getElementById('regSubject').value;
+            const password = document.getElementById('regPassword').value;
+            
+            if (name && email && school && subject && password) {
+                // Simulação de registro bem-sucedido
+                currentUser = {
+                    name: name,
+                    email: email,
+                    school: school,
+                    subject: subject
+                };
+                
+                isLoggedIn = true;
+                
+                // Atualizar interface para usuário logado
+                document.getElementById('loginBtn').innerHTML = `<i class="fas fa-user"></i> ${currentUser.name.split(' ')[0]}`;
+                document.getElementById('registerBtn').innerHTML = `<i class="fas fa-sign-out-alt"></i> Sair`;
+                document.getElementById('registerBtn').onclick = handleLogout;
+                
+                closeModal();
+                alert(`Cadastro realizado com sucesso! Bem-vindo(a), ${currentUser.name}!`);
+                
+                // Atualizar contadores
+                document.getElementById('teacherCount').textContent = "2.7k";
+                document.getElementById('moduleCount').textContent = "50";
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            isLoggedIn = false;
+            
+            // Restaurar botões de login/registro
+            document.getElementById('loginBtn').innerHTML = `<i class="fas fa-sign-in-alt"></i> Entrar`;
+            document.getElementById('registerBtn').innerHTML = `<i class="fas fa-user-plus"></i> Cadastre-se`;
+            document.getElementById('registerBtn').onclick = () => openModal('register');
+            
+            alert('Você saiu da plataforma.');
+        }
+
+        function startModule(moduleId) {
+            if (!isLoggedIn) {
+                openModal('login');
+                return;
+            }
+            
+            const module = modulesData.find(m => m.id === moduleId);
+            alert(`Iniciando módulo: ${module.title}`);
+            
+            // Simular progresso no módulo
+            if (module.progress < 100) {
+                module.progress = Math.min(module.progress + 25, 100);
+                renderModules();
+                updateStats();
+                
+                // Adicionar atividade recente
+                activitiesData.unshift({
+                    id: activitiesData.length + 1,
+                    title: `Você progrediu no módulo '${module.title}'`,
+                    time: "Agora mesmo",
+                    icon: "fas fa-chart-line",
+                    badge: "badge-primary"
+                });
+                
+                renderActivities();
+                
+                // Verificar conquistas
+                if (module.progress === 100) {
+                    achievementsData[2].achieved = true;
+                    renderAchievements();
+                    alert('Parabéns! Você completou um módulo e desbloqueou uma nova conquista!');
+                }
+            }
+        }
+
+        function registerForEvent(eventId) {
+            if (!isLoggedIn) {
+                openModal('login');
+                return;
+            }
+            
+            const event = upcomingData.find(e => e.id === eventId);
+            alert(`Inscrição confirmada para: ${event.title}`);
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            
+            if (!message) return;
+            
+            if (!isLoggedIn) {
+                alert('Por favor, faça login para enviar mensagens.');
+                openModal('login');
+                return;
+            }
+            
+            // Adicionar nova mensagem
+            const newMessage = {
+                id: chatMessagesData.length + 1,
+                author: currentUser ? currentUser.name.split(' ')[0] + " (Você)" : "Você",
+                message: message,
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            
+            chatMessagesData.push(newMessage);
+            renderChatMessages();
+            
+            // Limpar campo de entrada
+            messageInput.value = '';
+            
+            // Simular resposta automática
+            setTimeout(() => {
+                const autoReply = {
+                    id: chatMessagesData.length + 1,
+                    author: "Sistema",
+                    message: "Obrigado por sua contribuição na comunidade!",
+                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                };
+                
+                chatMessagesData.push(autoReply);
+                renderChatMessages();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
