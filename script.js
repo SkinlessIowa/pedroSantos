@@ -58,7 +58,7 @@ const projetosData = {
         {
             id: 'vector7',
             titulo: 'Símbolo Vetor Silhueta',
-            descricao: 'Silhueta de personageem de videogame para o Navega Arcade, projeto de interface de emulador web de fliperama',
+            descricao: 'Silhueta de personagem de videogame para o Navega Arcade, projeto de interface de emulador web de fliperama',
             imagem: 'mídia/vetores/Frame 1(3).png',
             categoria: 'Vetor',
             ano: '2025',
